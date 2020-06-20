@@ -1,78 +1,130 @@
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
-* {
-    margin: 0;
-    padding: 0;
-}
-
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    font: 16px/1 'Open Sans', sans-serif;
-    background: #e5e5e5;
-}
-
-body {
-    padding:30px 50px;
-}
-
-h1{
-    margin: 0 0 30px;
-}
-
-.accordion{
-    width: 50%;
-    background: #fff;
-}
-
-.accordion-tab > .accordion-toggle{
-    position: absolute;
-    display: none;
-}
-
-.accordion-tab > label{
-    color: #fff;
-    background: #2980b9;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 700;
+.demo{ background-color: #bbcdcf; }
+.serviceBox{
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 0 20px;
+    margin: 5px 5px 0 15px;
+    text-align: right;
+    border-radius: 20px 0;
     position: relative;
-    display: block;
-    padding: 13px 40px 13px 20px;
-    border-top: 1px solid #ddd;
-    cursor: pointer;
+    z-index: 1;
 }
-
-.accordion-tab > .accordion-content{
-    max-height: 0;
-    transition: all .40s;
-    overflow: hidden;
+.serviceBox .title{
+    color: #fff;
+    background: linear-gradient(to right,#fe8c00,#f83600);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    margin: -6px -6px 30px 0;
+    border-radius: 0 0 0 20px;
+    box-shadow: -2px 4px 1px rgba(0,0,0,0.2);
+    display: inline-block;
+    position: relative;
 }
-
-.accordion-tab > label:after {
-    content: '\f078';
+.serviceBox .title:before,
+.serviceBox .title:after{
+    content: "";
+    background: linear-gradient(to right bottom, transparent 49%, #f83600 50%);
+    width: 5px;
+    height: 5px;
     position: absolute;
-    top: 13px;
-    right: 20px;
-    font-family: fontawesome;
-    transform: rotate(90deg);
-    transition:transform .30s ;
+    top: 0;
+    left: -4px;
 }
-
-.accordion-tab > .accordion-toggle:checked ~ label:after{
-    transform: rotate(0deg);
+.serviceBox .title:after{
+    transform: rotate(180deg);
+    top: auto;
+    bottom: -5px;
+    left: auto;
+    right: 0;
 }
-
-.accordion-tab > .accordion-toggle:checked ~ .accordion-content{
-    max-height: 100vh;
+.serviceBox .description{
+    color: #555;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 23px;
+    text-align: center;
+    margin: 0 15px 20px;
 }
-
-.accordion-tab > .accordion-content p {
-    margin: 15px 0;
-    padding: 0 20px;
-    font-size: 15px;
-    line-height: 1.5;
+.serviceBox .service-icon{
+    color: #fff;
+    background: #36353a;
+    font-size: 35px;
+    text-align: center;
+    line-height: 68px;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
 }
+.serviceBox:hover .service-icon{ transform: rotateY(360deg); }
+.serviceBox .read-more{
+    color: #fff;
+    background: linear-gradient(to right,#fe8c00,#f83600);
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    width: 140px;
+    padding: 7px 0;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 4px 4px 1px rgba(0,0,0,0.2);
+    display: block;
+    position: relative;
+}
+.serviceBox .read-more:hover{ text-shadow: 0 0 5px #555; }
+.serviceBox .read-more:before,
+.serviceBox .read-more:after{
+    content: "";
+    background: linear-gradient(to bottom,#fe8c00,#f83600);
+    width: 15px;
+    height: 25px;
+    border-radius:50px 0 0 50px;
+    position: absolute;
+    top: -25px;
+    left: -15px;
+}
+.serviceBox .read-more:after{
+    background: #fe8c00;
+    border-radius: 50px 0 0 50px;
+    height: 62px;
+    z-index: -2;
+}
+.serviceBox.green .title,
+.serviceBox.green .read-more{
+    background: linear-gradient(to right, #2cdc81, #039b68);
+}
+.serviceBox.green .title:before,
+.serviceBox.green .title:after{
+    background: linear-gradient(to right bottom, transparent 49%, #039b68 50%);
+}
+.serviceBox.green .read-more:before{ background: linear-gradient(to bottom,#2cdc81, #039b68); }
+.serviceBox.green .read-more:after{ background: #2cdc81; }
+.serviceBox.blue .title,
+.serviceBox.blue .read-more{
+    background: linear-gradient(to right,#02e7f7,#876cf5);
+}
+.serviceBox.blue .title:before,
+.serviceBox.blue .title:after{
+    background: linear-gradient(to right bottom, transparent 49%, #876cf5 50%);
+}
+.serviceBox.blue .read-more:before{ background: linear-gradient(to bottom,#02e7f7,#876cf5); }
+.serviceBox.blue .read-more:after{ background: #02e7f7; }
+.serviceBox.purple .title,
+.serviceBox.purple .read-more{
+    background: linear-gradient(to right, #B53471, #6F1E51);
+}
+.serviceBox.purple .title:before,
+.serviceBox.purple .title:after{
+    background: linear-gradient(to right bottom, transparent 49%, #6F1E51 50%);
+}
+.serviceBox.purple .read-more:before{ background: linear-gradient(to bottom,#B53471, #6F1E51); }
+.serviceBox.purple .read-more:after{ background: #B53471; }
+@media only screen and (max-width:990px){
+    .serviceBox{ margin: 5px 5px 30px 15px; }
+}
+License Terms
