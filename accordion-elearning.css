@@ -1,130 +1,168 @@
-.demo{ background-color: #bbcdcf; }
-.serviceBox{
-    background-color: #fff;
+.demo{ background-color: #302E34; }
+.main-timeline{
     font-family: 'Roboto', sans-serif;
-    padding: 0 0 20px;
-    margin: 5px 5px 0 15px;
-    text-align: right;
-    border-radius: 20px 0;
+    padding: 30px 0;
+}
+.main-timeline:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.main-timeline:before{
+    content: '';
+    background-color: #fff;
+    height: 100%;
+    width: 5px;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.main-timeline .timeline{
+    width: 50%;
+    margin: 0 10px 20px 0;
+    float: left;
+    position: relative;
+}
+.main-timeline .timeline-content{
+    color: #555;
+    display: block;
     position: relative;
     z-index: 1;
 }
-.serviceBox .title{
-    color: #fff;
-    background: linear-gradient(to right,#fe8c00,#f83600);
-    font-size: 18px;
-    font-weight: 700;
-    text-align: right;
-    text-transform: uppercase;
-    padding: 12px 25px;
-    margin: -6px -6px 30px 0;
-    border-radius: 0 0 0 20px;
-    box-shadow: -2px 4px 1px rgba(0,0,0,0.2);
-    display: inline-block;
-    position: relative;
-}
-.serviceBox .title:before,
-.serviceBox .title:after{
-    content: "";
-    background: linear-gradient(to right bottom, transparent 49%, #f83600 50%);
-    width: 5px;
-    height: 5px;
+.main-timeline .timeline-content:hover{ text-decoration: none; }
+.main-timeline .timeline-content:before{
+    content: '';
+    background-color: #ff6a14;
+    height: calc(100% + 20px);
+    width: 135px;
+    transform: translateY(-50%);
     position: absolute;
-    top: 0;
-    left: -4px;
+    right: 2px;
+    top: 50%;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
 }
-.serviceBox .title:after{
-    transform: rotate(180deg);
-    top: auto;
-    bottom: -5px;
-    left: auto;
-    right: 0;
-}
-.serviceBox .description{
-    color: #555;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    line-height: 23px;
-    text-align: center;
-    margin: 0 15px 20px;
-}
-.serviceBox .service-icon{
+.main-timeline .timeline-year{
     color: #fff;
-    background: #36353a;
+    background-color: #ff6a14;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 10px 30px 10px 20px;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    transform: translateY(-50%);
+    position: absolute;
+    left: calc(100% + 3px);
+    top: 50%;
+}
+.main-timeline .timeline-icon{
+    color: #fff;
     font-size: 35px;
     text-align: center;
-    line-height: 68px;
-    width: 70px;
+    line-height: 66px;
     height: 70px;
-    margin: 0 auto 20px;
-    border: 2px solid #000;
+    width: 70px;
     border-radius: 50%;
-    transition: all 0.3s ease 0s;
-}
-.serviceBox:hover .service-icon{ transform: rotateY(360deg); }
-.serviceBox .read-more{
-    color: #fff;
-    background: linear-gradient(to right,#fe8c00,#f83600);
-    font-size: 17px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    width: 140px;
-    padding: 7px 0;
-    border-radius: 0 30px 30px 0;
-    box-shadow: 4px 4px 1px rgba(0,0,0,0.2);
-    display: block;
-    position: relative;
-}
-.serviceBox .read-more:hover{ text-shadow: 0 0 5px #555; }
-.serviceBox .read-more:before,
-.serviceBox .read-more:after{
-    content: "";
-    background: linear-gradient(to bottom,#fe8c00,#f83600);
-    width: 15px;
-    height: 25px;
-    border-radius:50px 0 0 50px;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+    border: 4px solid #fff;
+    transform: translateY(-50%);
     position: absolute;
-    top: -25px;
-    left: -15px;
+    right: 20px;
+    top: 50%;
+    z-index: 1;
 }
-.serviceBox .read-more:after{
-    background: #fe8c00;
-    border-radius: 50px 0 0 50px;
-    height: 62px;
-    z-index: -2;
+.main-timeline .inner-content{
+    background-color: #fff;
+    padding: 10px 130px 10px 40px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
 }
-.serviceBox.green .title,
-.serviceBox.green .read-more{
-    background: linear-gradient(to right, #2cdc81, #039b68);
+.main-timeline .title{
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
 }
-.serviceBox.green .title:before,
-.serviceBox.green .title:after{
-    background: linear-gradient(to right bottom, transparent 49%, #039b68 50%);
+.main-timeline .description{
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 0;
 }
-.serviceBox.green .read-more:before{ background: linear-gradient(to bottom,#2cdc81, #039b68); }
-.serviceBox.green .read-more:after{ background: #2cdc81; }
-.serviceBox.blue .title,
-.serviceBox.blue .read-more{
-    background: linear-gradient(to right,#02e7f7,#876cf5);
+.main-timeline .timeline:nth-child(even){
+    margin: 0 0 20px 10px;
+    float: right;
 }
-.serviceBox.blue .title:before,
-.serviceBox.blue .title:after{
-    background: linear-gradient(to right bottom, transparent 49%, #876cf5 50%);
+.main-timeline .timeline:nth-child(even) .timeline-content:before{
+    transform: translateY(-50%) rotateY(180deg);
+    right: auto;
+    left: 3px;
 }
-.serviceBox.blue .read-more:before{ background: linear-gradient(to bottom,#02e7f7,#876cf5); }
-.serviceBox.blue .read-more:after{ background: #02e7f7; }
-.serviceBox.purple .title,
-.serviceBox.purple .read-more{
-    background: linear-gradient(to right, #B53471, #6F1E51);
+.main-timeline .timeline:nth-child(even) .timeline-year{
+    padding: 10px 20px 10px 30px;
+    left: auto;
+    right: calc(100% + 1px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
 }
-.serviceBox.purple .title:before,
-.serviceBox.purple .title:after{
-    background: linear-gradient(to right bottom, transparent 49%, #6F1E51 50%);
+.main-timeline .timeline:nth-child(even) .timeline-icon{
+    right: auto;
+    left: 20px;
 }
-.serviceBox.purple .read-more:before{ background: linear-gradient(to bottom,#B53471, #6F1E51); }
-.serviceBox.purple .read-more:after{ background: #B53471; }
-@media only screen and (max-width:990px){
-    .serviceBox{ margin: 5px 5px 30px 15px; }
+.main-timeline .timeline:nth-child(even) .inner-content{
+    padding: 10px 30px 10px 145px;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
 }
-License Terms
+.main-timeline .timeline:nth-child(4n+2) .timeline-content:before{ background-color: #CF18FF; }
+.main-timeline .timeline:nth-child(4n+2) .timeline-year{ background-color: #CF18FF; }
+.main-timeline .timeline:nth-child(4n+3) .timeline-content:before{ background-color: #00BBFE; }
+.main-timeline .timeline:nth-child(4n+3) .timeline-year{ background-color: #00BBFE; }
+.main-timeline .timeline:nth-child(4n+4) .timeline-content:before{ background-color: #2be52b; }
+.main-timeline .timeline:nth-child(4n+4) .timeline-year{ background-color: #2be52b; }
+@media screen and (max-width:767px){
+    .main-timeline{ padding: 0; }
+    .main-timeline:before{ display: none; }
+    .main-timeline .timeline,
+    .main-timeline .timeline:nth-child(even){
+        width: 100%;
+        padding: 60px 0 65px;
+        margin: 0 0 20px;
+        float: none;
+    }
+    .main-timeline .inner-content{ padding: 10px 20px 10px 40px; }
+    .main-timeline .timeline:nth-child(even) .inner-content{ padding: 10px 40px 10px 20px; }
+    .main-timeline .timeline-content:before{
+        height: 65px;
+        width: 80px;
+        transform: translateY(0);
+        top: 100%;
+        right: 0;
+    }
+    .main-timeline .timeline:nth-child(even) .timeline-content:before{
+        transform: translateY(0) rotateY(180deg);
+        left: 0;
+    }
+    .main-timeline .timeline-year{
+        transform: translateY(0);
+        left: 0;
+        top: -60px;
+    }
+    .main-timeline .timeline:nth-child(even) .timeline-year{
+        transform: translateY(0);
+        right: 0;
+        top: -60px;
+    }
+    .main-timeline .timeline-icon{
+        font-size: 25px;
+        line-height: 48px;
+        height: 50px;
+        width: 50px;
+        border-width: 2px;
+        transform: translateY(0);
+        top: calc(100% + 7px);
+        right: 7px;
+    }
+    .main-timeline .timeline:nth-child(even) .timeline-icon{ left: 5px; }
+}
+@media screen and (max-width:567px){
+    .main-timeline .title{ font-size: 18px; }
+}
